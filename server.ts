@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 // 解析 JSON 請求體，並適度調大限制，以符合大型會議逐字稿的字數需求
 app.use(express.json({ limit: '20mb' }));
