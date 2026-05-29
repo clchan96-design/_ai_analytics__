@@ -13,6 +13,7 @@ export default defineConfig(() => {
     },
     server: {
       middlewareMode: false,
+      allowedHosts: ['ai-analytics-iteo.onrender.com'],
     },
   };
 });
