@@ -16,11 +16,6 @@ app.use(express.json({ limit: '20mb' }));
 const apiKey = process.env.GEMINI_API_KEY;
 const ai = new GoogleGenAI({
   apiKey: apiKey,
-  httpOptions: {
-    headers: {
-      'User-Agent': 'aistudio-build',
-    }
-  }
 });
 
 // 定義系統指令，設定 AI 行為＆輸出格式
