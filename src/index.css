@@ -5,4 +5,52 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --font-display: "Space Grotesk", sans-serif;
+  
+  color-scheme: light dark;
+}
+
+@supports (selector(:root:has(*))) {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: 0 0% 3%;
+      --color-text: 0 0% 98%;
+    }
+  }
+}
+
+/* Dark mode color adjustments */
+@layer base {
+  html.dark {
+    color-scheme: dark;
+  }
+  
+  /* Prose dark mode adjustments */
+  .dark .prose {
+    @apply text-slate-300;
+  }
+  
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose h5,
+  .dark .prose h6 {
+    @apply text-white;
+  }
+  
+  .dark .prose a {
+    @apply text-indigo-400 hover:text-indigo-300;
+  }
+  
+  .dark .prose strong {
+    @apply text-slate-100;
+  }
+  
+  .dark .prose code {
+    @apply bg-slate-800 text-indigo-400;
+  }
+  
+  .dark .prose pre {
+    @apply bg-slate-800 text-slate-200;
+  }
 }
